@@ -24,7 +24,17 @@ class MathViewModel : ViewModel() {
     private val _smallNumber = MutableLiveData<Int?>()
     val smallNumber: LiveData<Int?> = _smallNumber
 
+    //The answer given
+    private val _answer = MutableLiveData<String?>()
+    val answer: LiveData<String?> = _answer
 
+    //The string for if the answer is correct or incorrect
+    private val _resultText = MutableLiveData<String?>()
+    val resultText: LiveData<String?> = _resultText
+
+    //The string for if the answer is correct or incorrect
+    private val _pointsResultText = MutableLiveData<String?>()
+    val pointsResultText: LiveData<String?> = _pointsResultText
 
     //Score for the game (hopefully initializes with 0 as a value)
     private val _score = MutableLiveData<Int?>(0)
@@ -48,5 +58,22 @@ class MathViewModel : ViewModel() {
         _smallNumber.value = (2..9).random()
         _largeNumber.value = largeRange?.random()
     }
+
+    fun setAnswer(response: String){
+        _answer.value = response
+    }
+
+    fun updatePoints() {
+        if(_answer.value?.toInt() == _largeNumber.value!! * _smallNumber.value!!)
+        {
+            _score.value = 10 + _score.value!!
+            _resultText.value = "CORRECT!"
+            _pointsResultText.value = "+10 POINTS"
+        } else {
+            _resultText.value = "WRONG!"
+            _pointsResultText.value = "+0 POINTS"
+        }
+    }
+
 
 }

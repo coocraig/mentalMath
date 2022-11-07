@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.mentalmath.databinding.FragmentBeginningBinding
 import com.example.mentalmath.databinding.FragmentProblemBinding
 import com.example.mentalmath.model.MathViewModel
@@ -45,5 +46,10 @@ class ProblemFragment : Fragment() {
         _binding = null
     }
 
+    fun onToResults()
+    {
+        sharedViewModel.setAnswer(binding.answer.text.toString())
+        findNavController().navigate(R.id.action_problemFragment_to_resultsFragment)
+    }
 
 }

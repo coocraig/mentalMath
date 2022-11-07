@@ -1,43 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:id="@+id/layout_results"
     tools:context=".ResultsFragment">
 
-    <TextView
-        android:id="@+id/resultsText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CORRECT"
-        android:textColor="@color/black"
-        android:textSize="90dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.148" />
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.mentalmath.model.MathViewModel" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+10 POINTS"
-        android:textSize="60sp"
-        android:id="@+id/pointsChange"
-        app:layout_constraintEnd_toEndOf="@+id/resultsText"
-        app:layout_constraintStart_toStartOf="@+id/resultsText"
-        app:layout_constraintTop_toBottomOf="@id/resultsText"
-        />
+        <variable
+            name="resultsFragment"
+            type="com.example.mentalmath.ResultsFragment" />
 
-    <Button
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="300sp"
-        android:layout_marginTop="68dp"
-        android:text="GIVE ME ANOTHER"
-        android:textSize="60sp"
-        app:layout_constraintEnd_toEndOf="@+id/resultsText"
-        app:layout_constraintStart_toStartOf="@+id/resultsText"
-        app:layout_constraintTop_toBottomOf="@id/pointsChange" />
+        android:layout_height="match_parent"
+        >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/resultsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{viewModel.resultText.toString()}'
+            android:textColor="@color/black"
+            android:textSize="90dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.148" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{viewModel.pointsResultText.toString()}'
+            android:textSize="60sp"
+            android:id="@+id/pointsChange"
+            app:layout_constraintEnd_toEndOf="@+id/resultsText"
+            app:layout_constraintStart_toStartOf="@+id/resultsText"
+            app:layout_constraintTop_toBottomOf="@id/resultsText"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="300sp"
+            android:layout_marginTop="68dp"
+            android:text="GIVE ME ANOTHER"
+            android:textSize="60sp"
+            app:layout_constraintEnd_toEndOf="@+id/resultsText"
+            app:layout_constraintStart_toStartOf="@+id/resultsText"
+            app:layout_constraintTop_toBottomOf="@id/pointsChange"
+            android:onClick='@{() -> resultsFragment.backAgain()}'/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
