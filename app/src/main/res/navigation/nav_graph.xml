@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/beginningFragment">
+
+    <fragment
+        android:id="@+id/beginningFragment"
+        android:name="com.example.mentalmath.BeginningFragment"
+        android:label="fragment_beginning"
+        tools:layout="@layout/fragment_beginning" >
+        <action
+            android:id="@+id/action_beginningFragment_to_problemFragment"
+            app:destination="@id/problemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/problemFragment"
+        android:name="com.example.mentalmath.ProblemFragment"
+        android:label="fragment_problem"
+        tools:layout="@layout/fragment_problem" >
+        <action
+            android:id="@+id/action_problemFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultsFragment"
+        android:name="com.example.mentalmath.ResultsFragment"
+        android:label="fragment_results"
+        tools:layout="@layout/fragment_results" >
+        <action
+            android:id="@+id/action_resultsFragment_to_problemFragment"
+            app:destination="@id/problemFragment" />
+    </fragment>
+</navigation>
