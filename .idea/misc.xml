@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Owner/AndroidStudioProjects/mentalMath/app/src/main/res/layout/fragment_beginning.xml" value="0.21829710144927536" />
+        <entry key="..\:/Users/Owner/AndroidStudioProjects/mentalMath/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Owner/AndroidStudioProjects/mentalMath/app/src/main/res/layout/fragment_beginning.xml" value="0.1" />
         <entry key="..\:/Users/Owner/AndroidStudioProjects/mentalMath/app/src/main/res/layout/fragment_problem.xml" value="0.21829710144927536" />
         <entry key="..\:/Users/Owner/AndroidStudioProjects/mentalMath/app/src/main/res/layout/fragment_results.xml" value="0.21829710144927536" />
       </map>

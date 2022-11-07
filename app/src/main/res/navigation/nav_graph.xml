@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/beginningFragment"
         android:name="com.example.mentalmath.BeginningFragment"
-        android:label="fragment_beginning"
+        android:label="Welcome"
         tools:layout="@layout/fragment_beginning" >
         <action
             android:id="@+id/action_beginningFragment_to_problemFragment"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/problemFragment"
         android:name="com.example.mentalmath.ProblemFragment"
-        android:label="fragment_problem"
+        android:label="Problem"
         tools:layout="@layout/fragment_problem" >
         <action
             android:id="@+id/action_problemFragment_to_resultsFragment"
@@ -26,7 +26,7 @@
     <fragment
         android:id="@+id/resultsFragment"
         android:name="com.example.mentalmath.ResultsFragment"
-        android:label="fragment_results"
+        android:label="Result"
         tools:layout="@layout/fragment_results" >
         <action
             android:id="@+id/action_resultsFragment_to_problemFragment"
